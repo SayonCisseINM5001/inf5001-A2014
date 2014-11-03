@@ -15,7 +15,7 @@ if(sources != null){
     html_list_versions += '<table border=1><tr><th>Version</th><th>Date</th><th>Contributeur</th><th>Ampleur de la modification</th></tr>';
     for (var i = 0; i < sources.length; i++) {
         html_list_versions += '<tr><td>' + (i + 1) + '</td><td>' + data.query.pages[idPage].revisions[i].timestamp +
-                '</td><td>' + data.query.pages[idPage].revisions[i].user + '</td><td>' + Math.abs(sources[i].sizediff) + '</td></tr>';
+                '</td><td>' + data.query.pages[idPage].revisions[i].user + '</td><td>' + data.query.pages[idPage].revisions[i].size + '</td></tr>';
 
     }
     html_list_versions += '</table>';
@@ -66,8 +66,10 @@ function getJsonWiki() {
     wikiUrlApiPath = Grisou.WikiHelper.getApiUrlPath();
 
     wikiUrlRequest = wikiUrlApiPath + "?action=query&list=users&format=json&titles=" + titreArticle +
-            "&prop=revisions&rvlimit=500";
+          "&prop=revisions&rvprop=size|timestamp|user&rvlimit=500";
     
+    
+
 
     doGet(wikiUrlRequest, "Q1");
 
