@@ -14,8 +14,8 @@ if(sources != null){
     $("#titre").html('Liste des versions pour l\'article ' + titre);
     html_list_versions += '<table border=1><tr><th>Version</th><th>Date</th><th>Contributeur</th><th>Nombre de caract&egrave;res modifi&eacute;s</th><th>Ampleur de la modification</th></tr>';
     for (var i = 0; i < sources.length; i++) {
-        html_list_versions += '<tr><td align="center">' + (i + 1) + '</td><td>' + data.query.pages[idPage].revisions[i].timestamp +
-                '</td><td>' + data.query.pages[idPage].revisions[i].user + '</td><td align="center">' + data.query.pages[idPage].revisions[i].size + '</td><td align="center">' + getAmpleur(data.query.pages[idPage].revisions[i].size) + '</td></tr>';
+        html_list_versions += '<tr><td align = "center">' + (i + 1) + '</td><td>' + data.query.pages[idPage].revisions[i].timestamp +
+                '</td><td>' + data.query.pages[idPage].revisions[i].user + '</td><td align = "center">' + data.query.pages[idPage].revisions[i].size + '</td><td align="center">' + getAmpleur(data.query.pages[idPage].revisions[i].size) + '</td></tr>';
 
     }
     html_list_versions += '</table>';
